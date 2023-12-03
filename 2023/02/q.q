@@ -1,6 +1,6 @@
-p:("**";":")0:`p                                      / read puzzle
-i:first (" I";" ")0:first p                           / id of the games
-c:((!). reverse(" IS";" ")0:)''[","vs''";"vs'last p]  / dict of cubes count for each games/set
+p:("**";":")0:`p                                      / read (p)uzzle
+i:first (" I";" ")0:first p                           / (i)d of the games
+c:((!). reverse(" IS";" ")0:)''[","vs''";"vs'last p]  / dict of (c)ubes count for each games/set
 x:`red`green`blue!12 13 14i                           / given cube per color
 a1:sum i where all flip (&/')c<=\:\:x                 / part 1: compare with each sets and if all set's cubes <= given cube, it means it can be played and sum those game's id
 -1 "part 1 ans: ",string a1;
