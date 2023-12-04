@@ -1,4 +1,4 @@
-p:"I"$(0N 3#/:)each" | "vs/:last("**";":")0:`p  / parse (p)uzzle into list of 2 integer sets
+p:"I"$(0N 3#/:)each" | "vs/:last("**";":")0:`p  / (p)uzzle as list of 2 integer sets
 c:(sum(in).)'                                   / (c)ount intersection
 a1:sum floor .5*2 xexp i:c p                    / part 1: count each intersection and sum them
 -1 "part 1 ans: ",string a1;
