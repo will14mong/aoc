@@ -1,5 +1,5 @@
 p:"," vs first read0`p                      / (p)uzzle
-h:{mod[(x+`int$y)*17;256]}                  / (h)ash function
+h:{mod[17*x+`int$y;256]}                    / (h)ash function
 a1:sum h/[0;] each p                        / part 1: sum of each hash
 -1 "part 1 ans: ",string a1;
 r:{$["="in x;"SJ"$"=" vs x;"S"$-1_x]}       / (r)ead label and parse into (label;focal length) for = or label for -
