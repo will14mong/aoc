@@ -11,11 +11,11 @@ a1:sum raze i@'v                                / sum all the numbers around the
 -1"part 1 ans: ",string a1;
 
 g:p="*"                                         / (g)ears boolean matrix 
-f:{ if[not any g[;y];:x];                       / if no * on that column, return prev sum 
-    c:-1 0 1+/:where g[;y];                     / list of columns adjacent to *
-    p:distinct each d[n]bin\:-1 0 1+y;          / list of number's index for each row 
+f:{ if[not any g[z];:y];                        / if no * on that column, return prev sum 
+    c:-1 0 1+/:where g[z];                      / list of columns adjacent to *
+    p:distinct each x bin\:-1 0 1+z;            / list of number's index for each row 
     m:raze each (i@'p)@/:c;                     / list of numbers that's adjacent to *
-    :x+sum prd'[m]*-1+sum each not null m}      / return prd + prev sums 
-a2:0 f/til count first p
+    :y+sum prd'[m]*-1+sum each not null m}      / return prd + prev sums 
+a2:0 f[d n]/til count first p
 -1"part 2 ans: ",string a2;
 exit 0
