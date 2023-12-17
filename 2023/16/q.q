@@ -13,9 +13,7 @@ f:{ / x:([]n;d)                                                                /
   .[`t;(x`n;`v);:;1b];                                                         /     mark visited
   x}
 s:{t[`v]:0b;t[y;`v]:1b;V::0#V;{count x}f/enlist`n`d!(y;x);sum t`v}             / (s)ides, function to count energized tiles for each sides
-r:raze {x s/: y} .' flip (o;S)
-a1:first r 
--1 "part 1 ans: ",string a1;
-a2:max r
--1 "part 2 ans: ",string a2;
+r:raze o s/''S
+-1 "part 1 ans: ",string a1:first r;
+-1 "part 2 ans: ",string a2:max r;
 exit 0
