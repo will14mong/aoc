@@ -1,7 +1,7 @@
 p:1_'(where ""~/:p) _ p:(enlist""),read0`p                                      / (p)uzzle input
 m:(`$i#'p 0)!-1_'(1+i:p[0]?'"{") _'p 0                                          / (m)ap of function to definition
 l:raze`$"xmas",/:\:("mn";"mx")                                                  / (l)abel min/max for each xmas var
-t:enlist `n`p`l!(`in;0;1b)                                                      / (t)ree root (n:node, p:parent index, l:center,left or right (`c/`l/`r))
+t:enlist `n`p`l!(`in;0;1b)                                                      / (t)ree root (n:node, p:parent index, l: true or false)
 n:{ n:`$raze":"vs'","vs m x;                                                    / (n)ode creation function
     p:y,count[t]+2*where(c:count[n] div 2)#2;
     flip(n;p;1b,(c*2)#10b)}
@@ -19,7 +19,7 @@ u:{ n:string[x`n];                                                              
     @[x;k;$[c1|c4;&;|];$[c1;-1;c2;1;0]+x`num]}
 f:{select from (update prev l from t t[`p]scan x)where not n in (`A`R,key m)}   / (f)unction to get path to root
 r:((8#(max;min))@'value flip l#u each f@)each where `A=t`n                      / (r)esults of xmas min/max for each Accepted path
-i:"J"$(("S=," 0:)each -1_'1_'p 1)[;1]                                           / (i)nput for qns 1
+i:"J"$(("S=," 0:except[;"{}"]@)each p 1)[;1]                                    / (i)nput for qns 1
 a1:(+//)i where {any all x within' 2 cut flip r}each i                          
 -1 "part 1 ans: ",string a1;
 a2:sum prd flip 1+(deltas each r)[;1 3 5 7]
